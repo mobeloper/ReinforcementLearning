@@ -1,0 +1,135 @@
+Reinforcement Learning
+Trainer: Prashant Nair
+========================================================================================================================
+
+Agenda
+-------
+Introduction to RL
+	- Fundamentals
+	- RL Base Concept
+	- Agent Environment Interaction
+	- Types of RL Environment
+ 	- RL Platforms for Practice
+
+
+
+Rule: Don't try to create any ANALOGIES of any RL concept from ML and DL knowledge :)
+
+
+
+
+
+
+Introduction to Reinforcement Learning
+=======================================
+
+Reinforcement Learning is a branch of ML that focuses on HOW an AGENT can learn to make DECISIONS and take ACTIONS in an ENVIRONMENT to maximize the chances of getting REWARDS.
+
+
+RL is all about ACTION and REACTION.
+
+Agent ------------------------------------> Environment
+
+Agent learns via interacting with the environment.
+
+
+Example:
+
+Goal: Train a dog to fetch the ball.
+------------------------------------
+Agent: Dog
+Environment: Dog Trainer | Ball | Backyard
+Reward Mechanism:
+
+if action == "Fetch":
+	Dog Trainer will give a COOKIE(Reward)
+else:
+	Dog Trainer will give NOTHING (Penalty)
+
+
+Common RL Terminologies
+=======================
+
+1. Agent: The one who perform ACTION and interact with the ENVIRONMENT
+
+2. Environment: Its the agent's world. The environment is responsible to 
+	
+	a. Monitor Agent's action.
+	b. Provide necessary feedback (Reward/Penalty) based on the action performed by the agent
+
+3. Action: A valid activity in a given environment performed by an agent.
+
+4. State/Observation: Current Position of the Agent and All Valid Positions in an Environment. 
+
+5. Reward: A feedback offered by the environment to the agent based on agent's STATE and ACTION
+
+6. Episode: List of events performed by an agent until termination condition is achieved
+
+
+
+Steps to setup local lab environment
+====================================
+1. Download and install Anaconda Python
+2. Download and install VSCode
+
+3. Create Python Environment inside VSCode for the project
+	- Create a folder in Desktop named RLDemos
+	- Open cmd (Command Prompt from RLDemos folder)
+	- Open VSCode via cmd using the command
+		code .
+
+
+
+4. Open Terminal (Terminal > New Terminal)
+5. Inside Terminal perform the following commands,
+
+	conda create -p rlvenv python==3.12
+
+5. Create requirements.txt inside project folder
+6. Add the following packages inside requirements.txt
+	gymnasium
+	pygame
+
+7. Install dependencies using requirements.txt
+	
+	pip install -r requirements.txt (Run this command inside Terminal of project vscode)
+
+8. Install ipykernel
+
+	pip install ipykernel
+
+9. Create a new file in project named RLTerminologiesDemo.ipynb 
+10. Connect Kernel to the Notebook 
+
+11. Try Running any Python Code to check if the notebook is executing python code or not
+	e.g. 2+3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
