@@ -85,14 +85,15 @@ Steps to setup local lab environment
 
 	conda create -p rlvenv python==3.12
 
+	conda activate /Users/oysterable/delete/ReinforcementLearning/rlvenv 
+
 5. Create requirements.txt inside project folder
 6. Add the following packages inside requirements.txt
 	gymnasium
 	pygame
 
-7. Install dependencies using requirements.txt
-	
-	pip install -r requirements.txt (Run this command inside Terminal of project vscode)
+7. Install dependencies using requirements.txt. Run this command inside Terminal of project vscode:
+	pip install -r requirements.txt 
 
 8. Install ipykernel
 
