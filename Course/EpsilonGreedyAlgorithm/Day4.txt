@@ -1,0 +1,117 @@
+Reinforcement Learning
+Trainer: Prashant Nair
+===============================================================================================================================================
+
+Fundamentally RL is all about making an agent learn their VALID MOVES(ACTIONS) based on REWARD mechanism.
+
+				Choosing an Action (Policy Function)
+						|
+	----------------------------------------------------------------------------------------
+	|					|					       |
+Exploration 				Exploitation 					Epsilon Greedy Algorithm
+
+
+Exploration: Performing random valid actions in the env
+
+	def explore(state)
+		return random action
+
+Exploitation: Selecting a valid action based on known good solution/model.
+
+	def exploitation(state):
+		select valid action based on state
+		return action
+
+
+Exploration-Exploitation Dilemma
+=================================
+
+This is all about taking a decision on whether to choose Exploration or Exploitation as a method  to (to select an action) train a model.
+
+To deal with this dilemma, RL practitioners created multiple method:
+
+1. UCB (Upper Confidence Bound)
+2. Thompson Sampling
+3. Epsilon Greedy Algorithm
+
+
+Epsilon Greedy Algorithm
+-------------------------
+
+Here epsilon is a HYPERPARAMETER. The valid values are in the range of 0.000 to 1.000 (Max 3 floating point precision)
+
+The goal of this algo is to leverage the power of both Exploration and Exploitation
+
+Algo:
+
+1. Choose the epsilon value
+
+2. For each episode step:
+	
+	p = pick a random normal number (np.random.randn)
+
+	if p < epsilon:
+		Choose Exploration strategy to select an action
+	else:
+		Choose Exploitation Strategy to select an action
+
+
+
+
+
+Solution Hint:
+
+#My EPS Strategy Function
+
+import numpy as np
+import random
+
+def epsilonGreedy(currentState,epsilon):
+    listActions=[0,1]
+    poleAngle=currentState[0][2]
+    
+    p = np.random.randn()
+    
+    if p < epsilon:
+        #Exploration Strategy
+        action = random.choice(listActions)
+        
+    else:
+        #Exploitation Strategy
+        if poleAngle < 0:
+            action = 0
+        else:
+            action = 1
+            
+    return action
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
