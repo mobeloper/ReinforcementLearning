@@ -1,0 +1,155 @@
+Reinforcement Learning
+Trainer: Prashant Nair
+=====================================================================================================================
+
+Agenda
+------
+Introduction to RL Algo
+Value Iteration 
+
+
+
+
+Reinforcement Learning Algorithms
+----------------------------------
+
+RL algo or modelling is all about training a model to perform a specific task.
+
+
+				Reinforcement Learning Modelling		
+									|
+		-------------------------------------------------------
+		|													  |
+	Based on Solution Methods				Based on Deep Learning/Neural Networks
+	(Hardcore Mathematical Formula)
+		|
+		|
+	--------------------------------------
+	|					 				 |
+Model-based Learning			Model-free Learning
+(Markov Decision Process)		(Q-Learning Based Approach)
+	|
+	|
+  ---------------------------------
+  |                               |
+Value							Policy
+Iteration						Iteration
+
+
+
+Terminologies
+-----------------
+1. Model-based learning: This strategy/approach can be used only on those environments that returns the following parameters:
+	
+	a. currentState
+	b. nextState
+	c. reward
+	d. transitionProbability
+	e. rewardProbability
+
+2. Model-free learning: This strategy/approach can be used only on those environments that returns the following parameters:
+	
+	a. currentState
+	b. nextState
+	c. reward
+
+
+
+
+=================================
+Model-based Learning
+=================================
+
+Based on Markov Decision Process (MDP) (Based on Markov Property)
+
+
+	Markov Property ---------------> "FUTURE DEPENDS ON THE PRESENT"
+
+
+if we see the above sentence of Markov as per RL, it means nextState depends on the currentState 
+
+
+
+MDP is a probabilistic model that solely depends on the CURRENT STATE to predict the NEXT STATE. It provides the mathematical framework for decision-making. The mathematical framework consists of 5 variables:
+
+Out of 5 variables, the 4 variables are offered by the environment
+
+	a. S -> set of states that the agent can actually be in an environment
+	b. A -> set of Valid Actions that can be performed by an agent
+	c. P(SS') (Transition Probability) -> Probability value of moving from one state(S) to another state(S`) by performing some action (A)
+
+	d. R(SS`) (Reward Probability) -> Probability value of the reward received by the agent for moving from current state(S) to the next state(S`) by performing an action (A)
+
+The 5th variable used in MDP 
+
+	e. Gamma (Discount Factor): Its a hyperparameter (value range : 0 - 1 [3 point precision])
+
+
+
+
+Two terminologies related to MDP
+=================================
+
+a. State Value Function / Value Function ------------- V(S)
+
+
+It specifies how good it for an agent to be in a particular state with given policy function
+
+	State      Value
+	  1		56
+      2 	61
+	  3		0
+ 	  4		9
+	  5		45
+
+b. State Action Value Function / Q function
+
+It specifies how good it is for an agent to perform a particular action in a state with the given policy
+
+e.g. Q function
+
+	State    Action    value
+
+	  S1       L         3
+	  S1       R 	     4        
+      S2       L         2
+      S2       R         0
+
+
+Algorithm for Value Iteration Model
+===================================
+
+Value Iteration: The goal of this algo is to IDENTIFY THE BEST VALUE FUNCTION that can help agent reach the goal in an optimal manner.
+
+Algo:
+
+1. Initialize random value function. (Initialize it with 0)
+2. For each state, Calc Q function Q(s,a)
+
+	Bellman's Optimality Equation:
+	Q(s,a) = TransitionProb * [ RewardProb + (gamma * ValueOfNextState From V(s)) ] 
+
+3. Update V(s) = max(Q(s,a))
+
+4. Check if V(S) is optimal. If optimal stop, else go to step2 (Optimal here means the agent is able to reach the GOAL).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
