@@ -84,8 +84,12 @@ Steps to setup local lab environment
 5. Inside Terminal perform the following commands,
 
 	conda create -p rlvenv python==3.12
-
 	conda activate /Users/oysterable/delete/ReinforcementLearning/rlvenv 
+
+	or
+
+	conda create -n rlvenv python==3.12
+	conda activate rlvenv
 
 5. Create requirements.txt inside project folder
 6. Add the following packages inside requirements.txt
